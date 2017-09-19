@@ -1,6 +1,6 @@
 {
   "name": "language-zone",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Zone file language support for Atom",
   "repository": "https://github.com/siavashs/language-zone",
   "author": "Siavash Safi",
