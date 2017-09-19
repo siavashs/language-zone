@@ -1,0 +1,77 @@
+'scopeName': 'text.zone'
+'name': 'Zone file'
+'comment': 'Zone language'
+'fileTypes': ['zone']
+'patterns': [
+  {
+    'include': '#comment'
+  }
+  {
+    'include': '#directive'
+  }
+  {
+    'include': '#class'
+  }
+  {
+    'include': '#type'
+  }
+  {
+    'include': '#ip4'
+  }
+  {
+    'include': '#ip6'
+  }
+  {
+    'include': '#number'
+  }
+  {
+    'include': '#spf'
+  }
+]
+'repository':
+  'comment':
+    'patterns': [
+      'match': ';.*'
+      'name': 'comment.zone'
+    ]
+  'directive':
+    'patterns': [
+      'match': '\\\$(INCLUDE|ORIGIN|TTL)',
+      'name': 'variable.zone'
+    ]
+  'class':
+    'patterns': [
+      'match': '\\b(IN)\\b'
+      'name': 'storage.type.zone'
+    ]
+  'type':
+    'patterns': [
+      'match': '\\b(A|AAAA|AFSDB|APL|CAA|CDNKEY|CDS|CERT|CNAME|CHCID|DLV|DNAME|DNSKEY|DS|HIP|IPSECKEY|KEY|KX|LOC|MX|NAPTR|NS|NSEC|NSEC3|NSEC3PARAM|OPENPGPKEY|PTR|RP|RRSIG|SIG|SOA|SRV|SSHFP|TA|TKEY|TLSA|TSIG|TXT|URI)\\b'
+      'name': 'keyword.other.zone'
+    ]
+  'ip4':
+    'patterns': [
+      {
+        'match': '(\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3})',
+        'name': 'string.other.zone'
+      }
+    ]
+  'ip6':
+    'patterns': [
+      {
+        'match': 's*((([0-9A-Fa-f]{1,4}:){7}([0-9A-Fa-f]{1,4}|:))|(([0-9A-Fa-f]{1,4}:){6}(:[0-9A-Fa-f]{1,4}|((25[0-5]|2[0-4]d|1dd|[1-9]?d)(.(25[0-5]|2[0-4]d|1dd|[1-9]?d)){3})|:))|(([0-9A-Fa-f]{1,4}:){5}(((:[0-9A-Fa-f]{1,4}){1,2})|:((25[0-5]|2[0-4]d|1dd|[1-9]?d)(.(25[0-5]|2[0-4]d|1dd|[1-9]?d)){3})|:))|(([0-9A-Fa-f]{1,4}:){4}(((:[0-9A-Fa-f]{1,4}){1,3})|((:[0-9A-Fa-f]{1,4})?:((25[0-5]|2[0-4]d|1dd|[1-9]?d)(.(25[0-5]|2[0-4]d|1dd|[1-9]?d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){3}(((:[0-9A-Fa-f]{1,4}){1,4})|((:[0-9A-Fa-f]{1,4}){0,2}:((25[0-5]|2[0-4]d|1dd|[1-9]?d)(.(25[0-5]|2[0-4]d|1dd|[1-9]?d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){2}(((:[0-9A-Fa-f]{1,4}){1,5})|((:[0-9A-Fa-f]{1,4}){0,3}:((25[0-5]|2[0-4]d|1dd|[1-9]?d)(.(25[0-5]|2[0-4]d|1dd|[1-9]?d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){1}(((:[0-9A-Fa-f]{1,4}){1,6})|((:[0-9A-Fa-f]{1,4}){0,4}:((25[0-5]|2[0-4]d|1dd|[1-9]?d)(.(25[0-5]|2[0-4]d|1dd|[1-9]?d)){3}))|:))|(:(((:[0-9A-Fa-f]{1,4}){1,7})|((:[0-9A-Fa-f]{1,4}){0,5}:((25[0-5]|2[0-4]d|1dd|[1-9]?d)(.(25[0-5]|2[0-4]d|1dd|[1-9]?d)){3}))|:)))(%.+)?s*(\/([0-9]|[1-9][0-9]|1[0-1][0-9]|12[0-8]))?',
+        'name': 'string.other.zone'
+      }
+    ]
+  'number':
+    'patterns': [
+      {
+        'match': '\\b(\\d+\\w?)\\b',
+        'name': 'constant.numeric.zone'
+      }
+    ]
+  'spf':
+    'patterns': [
+      'match': '\\binclude:|exists:|a:|ip4:|ip6:|mx:?|ptr:?|.all\\b'
+      'name': 'keyword.other.zone'
+    ]

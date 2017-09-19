@@ -1,0 +1,11 @@
+{
+  "name": "language-zone",
+  "version": "0.0.1",
+  "description": "Zone file language support for Atom",
+  "repository": "https://github.com/siavashs/language-zone",
+  "author": "Siavash Safi",
+  "license": "MIT",
+  "engines": {
+    "atom": "*"
+  }
+}
